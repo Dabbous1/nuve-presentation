@@ -1062,8 +1062,6 @@
         <h3><i class="ph-light ph-clock" style="color:var(--gold)"></i> What We Need (Phased)</h3>
         <ul class="check-list">
           <li><span class="icon no"><i class="ph-light ph-clock"></i></span> <span data-tip="Allows Nuve to operate as a fintech platform under FRA regulation -- enabling digital goal-based planning, AI-driven portfolio features, and advanced investment tools beyond basic brokerage.">FRA Fintech License</span> &mdash; Applied, Pending</li>
-          <li><span class="icon no"><i class="ph-light ph-x-circle"></i></span> <span data-tip="Permission from the Central Bank of Egypt to process payments -- letting users deposit and withdraw money via InstaPay, mobile wallets (Vodafone Cash, Orange, etc.), and Fawry cash agents.">CBE Payment Service Provider License</span> &mdash; Not Applied</li>
-          <li><span class="icon no"><i class="ph-light ph-x-circle"></i></span> <span data-tip="Allows Nuve to hold electronic money on behalf of users -- essentially running a digital wallet where users can store a balance, not just pass money through to investments.">CBE E-Money License</span> &mdash; Not Applied</li>
           <li><span class="icon no"><i class="ph-light ph-x-circle"></i></span> <span data-tip="Permission to issue physical and virtual prepaid cards (like a Nuve-branded Visa or Meeza card) that users can spend from. Requires significant capital and a PCI-DSS security audit.">CBE Prepaid Card Issuance License</span> &mdash; No Budget</li>
           <li><span class="icon no"><i class="ph-light ph-x-circle"></i></span> <span data-tip="Membership in Egypt's domestic card network (Meeza) and/or international networks (Visa). Required before any Nuve-issued cards can actually be used at ATMs, shops, or online.">Meeza / Visa Network Membership</span> &mdash; Deferred</li>
           <li><span class="icon no"><i class="ph-light ph-x-circle"></i></span> <span data-tip="A commercial agreement with Saxo Bank (Danish investment bank) to access their trading API -- letting Nuve users buy and sell US and European stocks from within the app.">Saxo Bank Partnership (Phase 3)</span> &mdash; Not Initiated</li>
@@ -1281,7 +1279,7 @@
       <div class="phase-card teal animate">
         <div class="phase-label" style="color:var(--teal)">Phase 1</div>
         <div class="phase-title">Invest MVP</div>
-        <div class="phase-timeline">6-8 Months &bull; Brokerage + AM License</div>
+        <div class="phase-timeline">2 Months &bull; Brokerage + AM License</div>
         <ul class="feature-list" style="font-size:0.72rem;">
           <li>Multi-asset universe &mdash; EGX, funds, T-bills, gold</li>
           <li>Transparent fee engine</li>
@@ -1390,8 +1388,8 @@
           <tr><th>Integration</th><th>Provider</th><th>Pricing</th><th>Max Monthly</th></tr>
         </thead>
         <tbody>
-          <tr><td><span data-tip="Electronic Know Your Customer -- the digital identity check during sign-up. It scans your National ID card with AI, reads the text automatically (OCR), and uses your camera to confirm you're a real person (liveness detection).">eKYC / ID Verification</span></td><td>Valify or Digified</td><td>$0.30-0.80/verification</td><td>$800</td></tr>
-          <tr><td><span data-tip="Sends those 6-digit codes to your phone via SMS when you sign up or do sensitive actions. It's the second layer of security (2FA) -- even if someone steals your password, they can't log in without your phone.">SMS OTP Gateway</span></td><td>Infobip</td><td>$0.035/SMS to Egypt</td><td>$350</td></tr>
+          <tr><td><span data-tip="Electronic Know Your Customer -- the digital identity check during sign-up. It scans your National ID card with AI, reads the text automatically (OCR), and uses your camera to confirm you're a real person (liveness detection).">eKYC / ID Verification</span></td><td>Valify or Digified</td><td>$0.30-0.80/verification</td><td>Usage-Based</td></tr>
+          <tr><td><span data-tip="Sends those 6-digit codes to your phone via SMS when you sign up or do sensitive actions. It's the second layer of security (2FA) -- even if someone steals your password, they can't log in without your phone.">SMS OTP Gateway</span></td><td>Infobip</td><td>$0.035/SMS to Egypt</td><td>Usage-Based</td></tr>
           <tr><td><span data-tip="Those notification bubbles on your phone -- 'Your buy order was executed,' 'EGX is up 2% today.' Google's Firebase service delivers these instantly to both iPhones and Androids for free up to 500 million messages/month.">Push Notifications</span></td><td>Firebase Cloud Messaging</td><td>Free (500M msgs/mo)</td><td>$0</td></tr>
           <tr class="already-paid"><td><span data-tip="A direct feed from the Egyptian Exchange providing real-time stock prices, index values, and corporate actions (dividends, splits). This is the raw data that powers every chart and price you see in the app.">EGX Market Data</span> <span class="paid-badge">Already paid</span></td><td>EGX Licensed Feed</td><td>Annual license</td><td>~$2,000 <span class="est-label">est.</span></td></tr>
           <tr><td><span data-tip="Sends transactional emails -- welcome messages when you sign up, monthly statements, trade confirmations, and password reset links. Not marketing spam, just essential account communications.">Email Service</span></td><td>Resend</td><td>$20/mo (50K emails)</td><td>$20</td></tr>
@@ -1403,6 +1401,7 @@
           <tr><td>Domain + DNS</td><td>Cloudflare Registrar</td><td>Annual registration</td><td>$15</td></tr>
           <tr><td><span data-tip="Anthropic's Claude Max subscription powering all AI features from day one -- portfolio insights, risk profiling, natural language goal planning, and personalized recommendations. Flat monthly fee with generous usage limits.">AI Intelligence</span></td><td>Claude Max Plan (Anthropic)</td><td>Flat monthly subscription</td><td>$200</td></tr>
           <tr><td><span data-tip="A headless content management system for publishing research articles, market analysis, and financial literacy content inside the app. Editors can write and publish without needing a developer.">Content CMS</span></td><td>Strapi Cloud</td><td>Pro plan</td><td>$99</td></tr>
+          <tr style="background:rgba(212,168,67,0.1); border-left:3px solid var(--gold);"><td><span data-tip="A Mac Mini is required to compile and build the iOS version of the app. Apple requires all iOS apps to be built using Xcode, which only runs on macOS -- so this machine is dedicated to iOS builds and App Store submissions.">Mac Mini (iOS Builds)</span> <span style="font-size:0.5rem; color:var(--gold); font-family:var(--font-mono); font-weight:600;">ONE-TIME</span></td><td>Apple</td><td>One-time purchase</td><td style="color:var(--gold); font-weight:600;">$800</td></tr>
           <tr><td><span data-tip="Budget reserved for additional third-party services, API testing tools, developer utilities, or unforeseen integration needs that may arise during Phase 1 development.">Extra Integrations</span></td><td>Various</td><td>Reserved budget</td><td>$200</td></tr>
         </tbody>
       </table>
@@ -1411,9 +1410,9 @@
       <div>
         <div class="label">Phase 1 New Monthly Recurring</div>
         <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">Excludes EGX data (~$2,000) &amp; on-prem hosting (~$1,500) already covered by the company</div>
-        <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">One-time setup: est. $15,000 - $25,000</div>
+        <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">Mac Mini for iOS builds: $800 one-time cost (not included in monthly total)</div>
       </div>
-      <div class="value">$1,742 / month</div>
+      <div class="value">$592 / month</div>
     </div>
   </div>
 
@@ -1444,7 +1443,6 @@
       <div>
         <div class="label">Phase 2 Additional Costs</div>
         <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">All costs are usage-based / incurred by the user</div>
-        <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">Possible one-time payments: CBE PSP license, payment integrations &mdash; est. $250,000 (Worst Case Scenario)</div>
       </div>
       <div class="value" style="color:var(--gold);">Usage-based</div>
     </div>
@@ -1479,7 +1477,6 @@
       <div>
         <div class="label">Phase 3 Additional Monthly (Fixed)</div>
         <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">6 integrations marked TBD &mdash; costs to be determined based on partnerships</div>
-        <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">One-time: CBE Card License, Meeza, PCI-DSS, Saxo Bank &mdash; est. $150,000</div>
       </div>
       <div class="value" style="color:var(--blue);">$13,195 + TBD</div>
     </div>
@@ -1521,9 +1518,6 @@
       </table>
     </div>
     <div class="two-col animate" style="margin-top:16px;">
-      <div class="note-box" style="margin-top:0;">
-        <strong style="color:var(--gold)">CapEx:</strong> Est. $15,000 - $25,000 for initial server cluster. Mac Mini for iOS builds: ~$800.
-      </div>
       <div class="recommendation" style="margin-top:0;">
         <strong>Data Residency:</strong> Full compliance with Egyptian Data Protection Law (No. 151/2020) &mdash; all data stays in Egypt.
       </div>
@@ -1591,12 +1585,10 @@
     <div class="summary-grid animate">
       <div class="summary-card" style="border: 1px solid rgba(46,196,182,0.15);">
         <div class="phase-num" style="color:var(--teal);">1</div>
-        <div class="phase-name">Invest MVP &bull; 6-8 Months</div>
+        <div class="phase-name">Invest MVP &bull; 2 Months</div>
         <div style="margin-bottom:8px;"><span class="badge badge-teal">Brokerage + AM &mdash; Active</span></div>
-        <div class="cost" style="color:var(--teal);">$1,742</div>
+        <div class="cost" style="color:var(--teal);">$592</div>
         <div class="cost-label">New Monthly Recurring</div>
-        <div class="setup">$25,000</div>
-        <div class="setup-label">One-Time Setup</div>
       </div>
       <div class="summary-card" style="border: 1px solid rgba(212,168,67,0.15);">
         <div class="phase-num" style="color:var(--gold);">2</div>
@@ -1604,8 +1596,6 @@
         <div style="margin-bottom:8px;"><span class="badge badge-gold">FRA Fintech + CBE PSP &mdash; Applied</span></div>
         <div class="cost" style="color:var(--gold);">Usage-based</div>
         <div class="cost-label">Scales with Transaction Volume</div>
-        <div class="setup">$250,000</div>
-        <div class="setup-label">Possible One-Time (Worst Case)</div>
       </div>
       <div class="summary-card" style="border: 1px solid rgba(74,144,217,0.15);">
         <div class="phase-num" style="color:var(--blue);">3</div>
@@ -1613,8 +1603,6 @@
         <div style="margin-bottom:8px;"><span class="badge badge-error">CBE Card + Saxo &mdash; Not Applied</span></div>
         <div class="cost" style="color:var(--blue);">$13,195 + TBD</div>
         <div class="cost-label">Fixed + Partnership-dependent</div>
-        <div class="setup">$150,000</div>
-        <div class="setup-label">One-Time Setup</div>
       </div>
     </div>
     <div class="recommendation animate">
@@ -1674,7 +1662,6 @@
             <li>Internal beta with Acumen staff + selected investors</li>
             <li>iOS (Xcode) + Android (Gradle) native builds for store submission</li>
             <li>Security audit, penetration testing &amp; bug fixes</li>
-            <li>Begin CBE PSP license application (for Phase 2 payments)</li>
           </ul>
         </div>
       </div>
