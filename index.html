@@ -1185,7 +1185,7 @@
         <div class="repo-item"><span class="name" data-tip="Manages prepaid card issuance in Phase 3 -- connecting to the Meeza/Visa networks, handling card creation, activation, freezing, and transaction processing.">nuve-service-cards</span><span class="desc">Phase 3 &mdash; Meeza/Visa issuance</span></div>
         <div class="repo-item"><span class="name" data-tip="Connects to Saxo Bank's API in Phase 3 to let users buy and sell international stocks (US, European markets) from within the Nuve app.">nuve-service-international</span><span class="desc">Phase 3 &mdash; Saxo Bank API</span></div>
         <div class="repo-item"><span class="name" data-tip="A shared library that all other repos import. It contains the data definitions (Zod schemas, TypeScript types) so the mobile app and every microservice agree on the exact shape of every object.">nuve-shared-types</span><span class="desc">Zod schemas, TS interfaces, constants</span></div>
-        <div class="repo-item"><span class="name" data-tip="A web dashboard for Acumen staff -- not for end users. Admins use it to manage users, review KYC submissions, handle compliance flags, and view business reports.">nuve-admin-panel</span><span class="desc">React web admin &mdash; compliance, reporting</span></div>
+        <div class="repo-item"><span class="name" data-tip="A web console for Acumen operations staff -- not for end users. Built with Next.js 16 + Tailwind v4 + Recharts. It calls nuve-api-gateway using types and react-query hooks imported from nuve-shared-types, so the backend contract stays consistent with mobile. Pages: Overview KPIs, Users &amp; KYC (approve/reject), Portfolio oversight, Transactions ledger with approval workflow.">nuve-admin-web</span><span class="desc">Next.js 16 ops console &mdash; KYC, portfolios, approvals</span></div>
         <div class="repo-item"><span class="name" data-tip="Infrastructure as Code -- instead of manually setting up servers, this repo contains scripts (Terraform + Ansible) that automatically provision and configure the entire server environment.">nuve-infra</span><span class="desc">Terraform / Ansible &mdash; IaC</span></div>
       </div>
     </div>
@@ -1336,7 +1336,10 @@
     <div class="arch-flow animate">
       <div class="arch-layer" style="border-color: rgba(46,196,182,0.2);">
         <div class="layer-label">Client Layer</div>
-        <div class="layer-content">React Native CLI (iOS via Xcode + Android via Gradle) &bull; TypeScript &bull; TanStack Query &bull; Reanimated &bull; Bilingual AR/EN + RTL</div>
+        <div class="layer-content">
+          <div style="margin-bottom:6px;"><span class="badge badge-teal" style="margin-right:6px;">Mobile</span>React Native CLI (iOS via Xcode + Android via Gradle) &bull; TypeScript &bull; TanStack Query &bull; Reanimated &bull; Bilingual AR/EN + RTL</div>
+          <div><span class="badge badge-gold" style="margin-right:6px;">Admin</span>Next.js 16 ops console (Acumen staff) &bull; Tailwind v4 &bull; Recharts &bull; Users &amp; KYC, Portfolios, Transactions, Dashboard &bull; Imports types + hooks from nuve-shared-types</div>
+        </div>
       </div>
       <div class="arch-arrow"><i class="ph-light ph-arrow-down"></i></div>
       <div class="arch-layer" style="border-color: rgba(212,168,67,0.2);">
@@ -1461,7 +1464,7 @@
           <tr><th>Integration</th><th>Provider</th><th>Pricing</th><th>Max Monthly</th></tr>
         </thead>
         <tbody>
-          <tr><td><span data-tip="Access to US and European stock markets through Saxo Bank's trading API. This lets Nuve users buy Apple, Tesla, or European stocks directly from the app without opening a separate international brokerage account.">International Equities</span></td><td>Saxo Bank OpenAPI</td><td>$1,000/mo + per-trade</td><td>$5,000</td></tr>
+          <tr><td><span data-tip="Access to US and European stock markets through Saxo Bank's trading API. This lets Nuve users buy Apple, Tesla, or European stocks directly from the app without opening a separate international brokerage account. Saxo does not publish OpenAPI pricing — it is an enterprise product negotiated directly under NDA based on expected volume, trade mix, and partner terms.">International Equities</span></td><td>Saxo Bank OpenAPI</td><td>Partnership quote (not public)</td><td>TBD</td></tr>
           <tr><td><span data-tip="Egypt's domestic card network (like Visa but Egyptian). Meeza cards work at all Egyptian ATMs and POS terminals. This is the backbone for issuing Nuve's own prepaid cards.">Card Processing</span></td><td>Meeza Network (EBC)</td><td>Per-txn + annual membership</td><td>TBD</td></tr>
           <tr><td><span data-tip="International card networks that let Nuve cards work worldwide -- for users traveling or shopping at international online stores. Comes with significant licensing and per-transaction fees.">Visa/MC Network</span></td><td>Visa or Mastercard</td><td>Network fees + licensing</td><td>TBD</td></tr>
           <tr><td><span data-tip="Physical manufacturing of the actual plastic cards -- printing, embedding the chip, personalizing with the user's name and card number. Done by specialized security companies.">Card Production</span></td><td>Thales / IDEMIA / G+D</td><td>$5/card</td><td>TBD</td></tr>
@@ -1475,13 +1478,14 @@
     </div>
     <div class="cost-total animate" style="border-color: rgba(74,144,217,0.15); background: rgba(74,144,217,0.06);">
       <div>
-        <div class="label">Phase 3 Additional Monthly (Fixed)</div>
-        <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">6 integrations marked TBD &mdash; costs to be determined based on partnerships</div>
+        <div class="label">Phase 3 Fixed (per-month, from sourced vendor pricing)</div>
+        <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">Intercom $195/mo + PCI-DSS $8,000/yr amortized (~$667/mo)</div>
+        <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">7 integrations marked TBD &mdash; enterprise/partnership pricing not publicly disclosed, requires direct vendor quotes</div>
       </div>
-      <div class="value" style="color:var(--blue);">$13,195 + TBD</div>
+      <div class="value" style="color:var(--blue);">~$862 + TBD</div>
     </div>
     <div class="recommendation animate" style="border-left-color:var(--gold); background:rgba(212,168,67,0.06); border-color:rgba(212,168,67,0.15);">
-      <strong style="color:var(--gold)">Recommendation:</strong> Defer Phase 3 until 10,000+ users generating revenue. Saxo Bank requires minimum AUM for partnership.
+      <strong style="color:var(--gold)">Recommendation:</strong> Defer Phase 3 until 10,000+ users generating revenue. Before any budget commitment, request quotes from Saxo, Meeza, Visa/MC, and Onfido &mdash; several of these are enterprise products with no public pricing.
     </div>
   </div>
 
@@ -1601,8 +1605,8 @@
         <div class="phase-num" style="color:var(--blue);">3</div>
         <div class="phase-name">Spend + Global &bull; 4-6 Months</div>
         <div style="margin-bottom:8px;"><span class="badge badge-error">CBE Card + Saxo &mdash; Not Applied</span></div>
-        <div class="cost" style="color:var(--blue);">$13,195 + TBD</div>
-        <div class="cost-label">Fixed + Partnership-dependent</div>
+        <div class="cost" style="color:var(--blue);">~$862 + TBD</div>
+        <div class="cost-label">Intercom + PCI-DSS · 7 partnership quotes needed</div>
       </div>
     </div>
     <div class="recommendation animate">
