@@ -1468,7 +1468,7 @@
           <tr><td><span data-tip="Egypt's domestic card network (like Visa but Egyptian). Meeza cards work at all Egyptian ATMs and POS terminals. This is the backbone for issuing Nuve's own prepaid cards.">Card Processing</span></td><td>Meeza Network (EBC)</td><td>Per-txn + annual membership</td><td>TBD</td></tr>
           <tr><td><span data-tip="International card networks that let Nuve cards work worldwide -- for users traveling or shopping at international online stores. Comes with significant licensing and per-transaction fees.">Visa/MC Network</span></td><td>Visa or Mastercard</td><td>Network fees + licensing</td><td>TBD</td></tr>
           <tr><td><span data-tip="Physical manufacturing of the actual plastic cards -- printing, embedding the chip, personalizing with the user's name and card number. Done by specialized security companies.">Card Production</span></td><td>Thales / IDEMIA / G+D</td><td>$5/card</td><td>TBD</td></tr>
-          <tr><td><span data-tip="A mandatory security certification for anyone handling card data. A qualified auditor tests your entire system for vulnerabilities. Without it, Visa/Mastercard won't let you process cards. It's expensive but non-negotiable.">PCI-DSS Compliance</span></td><td>QSA Auditor</td><td>Annual audit</td><td>$8,000/yr</td></tr>
+          <tr><td><span data-tip="A mandatory security certification for anyone handling card data. A qualified auditor tests your entire system for vulnerabilities. Without it, Visa/Mastercard won't let you process cards. It's expensive but non-negotiable.">PCI-DSS Compliance</span></td><td>QSA Auditor</td><td>$8,000/yr audit</td><td>~$667 <span class="est-label">amortized</span></td></tr>
           <tr><td><span data-tip="Connects Nuve cards to ATM machines across Egypt so users can withdraw cash from their investment returns or card balance at any supported ATM.">ATM Network</span></td><td>123 / Fawry ATM</td><td>Per-withdrawal fee</td><td>TBD</td></tr>
           <tr><td><span data-tip="In-app messaging for high-net-worth users to chat with a real financial advisor. Think of it like WhatsApp but built into the app, with agent routing and conversation history.">Live Chat</span></td><td>Intercom</td><td>$39/seat/mo x 5</td><td>$195</td></tr>
           <tr><td><span data-tip="Video-based identity verification for expats who can't visit Egypt in person. The user records a short video, and AI confirms it matches their ID documents -- more secure than photo-only KYC.">Enhanced KYC</span></td><td>Onfido</td><td>$1.50/verification</td><td>TBD</td></tr>
@@ -1478,8 +1478,8 @@
     </div>
     <div class="cost-total animate" style="border-color: rgba(74,144,217,0.15); background: rgba(74,144,217,0.06);">
       <div>
-        <div class="label">Phase 3 Fixed (per-month, from sourced vendor pricing)</div>
-        <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">Intercom $195/mo + PCI-DSS $8,000/yr amortized (~$667/mo)</div>
+        <div class="label">Phase 3 Fixed Monthly (sourced vendor pricing)</div>
+        <div style="font-size:0.65rem; color:var(--gray); font-family:var(--font-mono); margin-top:4px;">Intercom $195 + PCI-DSS $667 amortized ($8,000/yr) = $862</div>
         <div style="font-size:0.6rem; color:var(--gray); font-family:var(--font-mono); margin-top:2px;">7 integrations marked TBD &mdash; enterprise/partnership pricing not publicly disclosed, requires direct vendor quotes</div>
       </div>
       <div class="value" style="color:var(--blue);">~$862 + TBD</div>
